@@ -6,9 +6,16 @@ string retire = Console.ReadLine();
 int retireInt = Int32.Parse(retire);
 int diff = retireInt - currAgeInt;
 
-Console.WriteLine("You have {0} years left until you can retire.", diff);
+if(diff < 0)
+{
+    System.Console.WriteLine("You can already retire!");
+}
+else
+{
+    Console.WriteLine("You have {0} years left until you can retire.", diff);
 
-int currYear = DateTime.Now.Year;
-int retYear = currYear + diff;
+    int currYear = DateTime.Now.Year;
+    int retYear = currYear + diff;
 
-Console.WriteLine("It is {0}, so you can retire in {1}", currYear, retYear);
+    Console.WriteLine("It is {0}, so you can retire in {1}", currYear, retYear);
+}
